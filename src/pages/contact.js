@@ -1,11 +1,20 @@
-import React from "react";
+import React from 'react';
+import styled from 'styled-components';
+import {colors} from '../theme';
 
-export default () => (
-  <div>
+const EmailLink = styled.a`
+  color: ${colors.primary}
+`
+
+export default ({transition}) => (
+  <div style={transition && transition.style}>
     <div>
       <h1>Contact</h1>
       <p>
-        Email me at <a href="mailto:1reillym@gmail.com">1reillym@gmail.com</a>
+        Email me at{' '}
+        <EmailLink href="mailto:1reillym@gmail.com">
+          1reillym@gmail.com
+        </EmailLink>
       </p>
     </div>
   </div>

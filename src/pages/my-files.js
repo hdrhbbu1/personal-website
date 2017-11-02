@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export default ({ data }) => {
+export default ({data}) => {
   return (
     <div>
       <h1>Project Files</h1>
@@ -12,7 +12,7 @@ export default ({ data }) => {
           <th>Created</th>
           <th>Size</th>
         </tr>
-        {data.allFile.edges.map(({ node }) => (
+        {data.allFile.edges.map(({node}) => (
           <tr key={node.relativePath}>
             <td>{node.name}</td>
             <td>{node.extension}</td>
@@ -28,7 +28,7 @@ export default ({ data }) => {
 // probably sends the query to gatsby and it handles putting it into props
 export const query = graphql`
   query MyFilesQuery {
-    allFile(sort: { fields: [birthTime], order: DESC }) {
+    allFile(sort: {fields: [birthTime], order: DESC}) {
       edges {
         node {
           name

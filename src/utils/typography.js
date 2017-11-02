@@ -1,5 +1,6 @@
-import Typography from "typography";
+import Typography from 'typography';
+import altonTheme from 'typography-theme-alton';
 
-const typography = new Typography({ baseFontSize: "18px" });
+const typography = new Typography(altonTheme);
 
 export default typography;
