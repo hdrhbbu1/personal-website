@@ -1,2 +1,3 @@
-# gatsby-starter-hello-world
-Starter with the bare essentials needed for a Gatsby site
+# Personal Portfolio
+
+This is my personal portfolio and blog website. I created it using mainly React and Gatsby.
