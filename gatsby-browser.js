@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, {createElement} from 'react';
 import {Transition, TransitionGroup} from 'react-transition-group';
-
 import getTransitionStyle from './src/utils/getTransitionStyle';
 
 const ReplaceComponentRenderer = ({props}) => {

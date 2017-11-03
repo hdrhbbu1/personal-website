@@ -1,40 +1,64 @@
 import React from 'react';
 import styled, {ThemeProvider, injectGlobal} from 'styled-components';
 import {colors} from '../theme';
-import NavList from '../components/NavList';
+// import {generator} from 'uigradients';
+import NavBar from '../components/NavBar';
 
-import '../css/reset.css';
-
-const Wrapper = styled.div`
+const Main = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 1.2rem 0;
+  padding: 2rem 0.5rem;
+  max-width: 1000px;
 `;
-
-const Header = styled.header`
-  display: flex;
-  color: ${colors.primary};
-`;
-
-const SiteTitle = styled.h3`flex: 1;`;
 
 export default ({children, data}) => (
-  <div>
-    <Wrapper>
-      <Header>
-        <SiteTitle>{data.site.siteMetadata.title}</SiteTitle>
-        <NavList />
-      </Header>
-      {children()}
-    </Wrapper>
-  </div>
+  <Main>
+    <NavBar title={data.site.siteMetadata.title} />
+    {children()}
+  </Main>
 );
 
 injectGlobal`
-  body {
-    background-color: ${colors.white};
-  }
-`
+html {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  background-color: ${colors.secondary}
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+pre, code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+`;
 
 export const query = graphql`
   query LayoutQuery {

@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "MichaelTReilly",
+        name: "MichaelReilly",
         short_name: "MTR",
         start_url: "/",
         background_color: "#f7f0eb",

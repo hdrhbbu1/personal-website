@@ -1,7 +1,8 @@
 const colors = {
-  primary: '#FE8C01',
-  secondary: '#7ECCA3',
+  primary: '#76B798',
+  secondary: '#F9FAF7',
   bg: '#A13796',
+  logo: '#9733EE',
   snow: '#F9FAF7',
   lightsnow: '#F9FAF7',
   white: '#ffffff',

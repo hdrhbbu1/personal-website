@@ -12,8 +12,8 @@ const NavLink = ({ to, selected, className, children }) => (
 );
 
 export default styled(NavLink)`
-  margin-left: 0.5em;
   background: ${props => (props.selected ? 'palevioletred' : 'transparent')};
+  ${props => props.left ? 'margin-right: auto' : 'margin-left: 15px'};
   > a {
     display: inline-block;
     position: relative;
@@ -26,7 +26,7 @@ export default styled(NavLink)`
     width: 0;
     height: 3px;
     background: transparent;
-    transition: width 0.3s ease, background-color 0.3s ease;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
   &:hover:after {
     width: 100%;

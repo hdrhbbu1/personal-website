@@ -17,8 +17,6 @@
     "gatsby-plugin-typography": "^1.7.10",
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.17",
-    "react-transition-group": "^2.2.1",
-    "typography-theme-alton": "^0.15.10",
-    "uigradients": "^0.2.1"
+    "react-transition-group": "^2.2.1"
   }
 }
