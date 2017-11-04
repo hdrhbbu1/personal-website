@@ -1,20 +1,22 @@
 import React from 'react';
 import styled, {ThemeProvider, injectGlobal} from 'styled-components';
-import {colors} from '../theme';
-// import {generator} from 'uigradients';
-import NavBar from '../components/NavBar';
 
-const Main = styled.div`
+import NavBar from '../components/NavBar';
+import SideBar from '../components/SideBar';
+
+import {colors} from '../theme';
+
+const Container = styled.div`
   margin: 0 auto;
-  padding: 2rem 0.5rem;
+  padding: 2rem 1rem;
   max-width: 1000px;
 `;
 
 export default ({children, data}) => (
-  <Main>
+  <Container>
     <NavBar title={data.site.siteMetadata.title} />
     {children()}
-  </Main>
+  </Container>
 );
 
 injectGlobal`
@@ -28,7 +30,7 @@ html {
 body {
   overflow-x: hidden;
   position: relative;
-  background-color: ${colors.secondary}
+  background: ${colors.bg};
 }
 
 * {
@@ -43,10 +45,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-ul, ol {
-  list-style: none;
 }
 
 img {

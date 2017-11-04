@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {ThemeProvider} from 'styled-components';
 import {colors} from '../theme';
 import Block from '../components/Block';
+
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -14,11 +15,11 @@ export default ({transition}) => (
       <Block title="Experience">
         <article>
           <h4>Web Developer October 2017</h4>
+          <h5>Hopkinton Education Foundation, Hopkinton, MA</h5>
           <p>
-            Present Hopkinton Education Foundation, Hopkinton, MA Hopkinton
-            Education Foundation is a non-profit organization that fundraises
-            for the sole purpose of funding grants to advance innovation in the
-            Hopkinton Public Schools.
+            Hopkinton Education Foundation is a non-profit organization that
+            fundraises for the sole purpose of funding grants to advance
+            innovation in the Hopkinton Public Schools.
           </p>
           <ul>
             <li>
@@ -42,11 +43,12 @@ export default ({transition}) => (
         </article>
         <article>
           <h4>Web Developer</h4>
+          <h5>Chaga Midwest, Belle Plaine, MN</h5>
           <p>
-            Chaga Midwest, Belle Plaine, MN Chaga Midwest is a small dietary
-            supplement company that sells immune health supplements made from
-            100% wild-harvested Chaga. I developed their static website into a
-            dynamic e-commerce application.
+            Chaga Midwest is a small dietary supplement company that sells
+            immune health supplements made from 100% wild-harvested Chaga. I
+            developed their static website into a dynamic e-commerce
+            application.
           </p>
           <ul>
             <li>
@@ -79,11 +81,13 @@ export default ({transition}) => (
         <h4>Primary Technologies</h4>
         <p>HTML5, CSS3, JavaScript (ES5, ES6, ES7), React, NodeJS, Git</p>
         <h4>Languages</h4>
-        <p>JavaScript, Python, PHP • Libraries: React, Redux, jQuery</p>
+        <p>JavaScript, Python, PHP</p>
+        <h4>Libraries</h4>
+        <p>React, Redux, jQuery, RxJS</p>
         <h4>Frameworks</h4>
         <p>
           React Native, Express, Flask, Jest •Backend: NodeJS, MongoDB, SQL,
-          WordPress, Nginx
+          WordPress
         </p>
         <h4>Other</h4>
         <p>
@@ -94,12 +98,16 @@ export default ({transition}) => (
       <Block title="Education">
         <h4>Associates of Science in Computer Science</h4>
         <p>Normandale Community College, Bloomington, MN</p>
-        <h4>December 2016 Front-End Development Certificate</h4>
-        <p>Free Code Camp | https://www.freecodecamp.org/reillym</p>
+        <h4>Front-End Development Certificate</h4>
+        <p>
+          <a href="https://www.freecodecamp.org/reillym">Free Code Camp</a>
+        </p>
         <h4>
           Web Developer Bootcamp & Learn and Understand NodeJS Certificate
         </h4>
-        <p>Udemy | https://www.udemy.com/user/mike-r/</p>
+        <p>
+          <a href='https://www.udemy.com/user/mike-r/'>Udemy</a>
+        </p>
         <h4>Web Development Courses</h4>
         <p>
           <a href="https://app.pluralsight.com/profile/michael-reilly52">
@@ -111,8 +119,6 @@ export default ({transition}) => (
         <h4>Front End Development Workshops</h4>
         <p>Frontend Masters</p>
       </Block>
-
-      <Block title="Projects" />
     </Wrapper>
   </div>
 );

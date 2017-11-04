@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 import {colors} from '../theme';
 
-const NavLink = ({ to, selected, className, children }) => (
+const PageLink = ({ to, selected, className, children }) => (
   <li className={className} >
     <Link to={to}>
       {children}
@@ -11,7 +11,7 @@ const NavLink = ({ to, selected, className, children }) => (
   </li>
 );
 
-export default styled(NavLink)`
+export default styled(PageLink)`
   background: ${props => (props.selected ? 'palevioletred' : 'transparent')};
   ${props => props.left ? 'margin-right: auto' : 'margin-left: 15px'};
   > a {

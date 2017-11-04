@@ -2,10 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import BlogPostPreview from '../components/BlogPostPreview';
+import PageTitle from '../components/PageTitle';
 
 export default ({data, transition}) => (
   <div style={transition && transition.style}>
-    <h1>Blog</h1>
+    <PageTitle>
+      <h1>Blog</h1>
+    </PageTitle>
     <p>{data.allMarkdownRemark.totalCount} Posts</p>
     <div>
       {data.allMarkdownRemark.edges.map(({node}) => (

@@ -3,7 +3,9 @@ import Link from "gatsby-link";
 import styled from "styled-components";
 import {colors} from '../theme';
 
-const PostPreview = styled.div`margin-bottom: 20px;`;
+const PostPreview = styled.div`
+  margin-bottom: 20px;
+`;
 const Title = styled.h3`
   margin-bottom: 20px;
   display: inline-block;

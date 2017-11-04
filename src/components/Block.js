@@ -4,6 +4,8 @@ import {colors} from '../theme';
 
 import {Transition, TransitionGroup} from 'react-transition-group';
 
+const MIN_HEIGHT = 400;
+const MAX_HEIGHT = 2000;
 const duration = 350;
 
 const defaultStyle = {
@@ -32,31 +34,46 @@ const Fade = ({in: inProp, children}) => (
 );
 
 const BlockS = styled.div`
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   margin: 20px auto;
-  height: ${props => (props.height ? `${props.height}px` : '300px')};
-  width: 100%;
-  border: none;
-  border-radius: 4px;
+  min-height: 300px;
+  max-height: ${props => props.height && `${props.height}px`};
+  width: 50vw;
+  border-left: 4px solid ${colors.primary};
+  border-radius: 3px;
   background-color: ${props => (props.primary ? colors.primary : colors.snow)};
-  box-shadow: 10px 10px
-    ${props => (props.primary ? colors.snow : colors.primary)};
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.4s cubic-bezier(0.57, 0.21, 0.69, 1.25);
   cursor: pointer;
-  overflow: scroll;
-  transition: all 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 3px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  &:hover::after {
+    opacity: 1;
+  }
 `;
 
 const Title = styled.h2`
+  font-size: 1.8em;
   transform: ${props =>
-    props.showText ? `translate(0px, 0px)` : `translate(0px, 130px)`};
+    props.showText ? `translate(0px, 8px)` : `translate(0px, 130px)`};
   align-self: center;
   color: ${colors.primary};
   transition: all 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
 `;
 
 const Text = styled.div`
-  padding: 5px 10px;
+  padding: 5px 15px;
   color: black;
   transition: all 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
 `;
@@ -65,7 +82,7 @@ class Block extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      height: 300,
+      height: MIN_HEIGHT,
       showText: false
     };
     this.expandBox = this.expandBox.bind(this);
@@ -74,13 +91,10 @@ class Block extends React.Component {
   expandBox(e) {
     e.preventDefault();
     let height = this.state.height;
-    if (height === 600) {
-      height = 300;
-    }
-    else {
-      height = 600;
-    }
-    this.setState(({height, showText: !this.state.showText}));
+    this.setState({
+      height: height === MAX_HEIGHT ? MIN_HEIGHT : MAX_HEIGHT,
+      showText: !this.state.showText
+    });
   }
 
   render() {
