@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import {colors} from '../theme';
-
-import PageTitle from '../components/PageTitle';
+import { colors } from '../theme';
 
 const EmailLink = styled.a`color: ${colors.primary};`;
 
-export default ({transition}) => (
+export default ({ transition }) => (
   <div style={transition && transition.style}>
-    <PageTitle>
-      <h1>Contact</h1>
-    </PageTitle>
+    <h1>Contact</h1>
     <p>
       If you would like to connect with me you can email me at{' '}
       <EmailLink href="mailto:1reillym@gmail.com">1reillym@gmail.com</EmailLink>

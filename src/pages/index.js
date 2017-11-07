@@ -1,20 +1,26 @@
 import React from 'react';
-import styled, {ThemeProvider} from 'styled-components';
-import {colors} from '../theme';
+import styled from 'styled-components';
+
 import Block from '../components/Block';
+
+import { colors, sizes } from '../theme';
 
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 3.5em;
+  padding: 3em 0;
+  ${sizes.Desktop} {
+    padding: 2em 0;
+  }
 `;
 
-export default ({transition}) => (
+export default ({ transition }) => (
   <div style={transition && transition.style}>
     <Wrapper>
       <Block title="Experience">
         <article>
-          <h4>Web Developer October 2017</h4>
+          <h4>Freelance Web Development</h4>
+          <h4>Web Developer</h4>
           <h5>Hopkinton Education Foundation, Hopkinton, MA</h5>
           <p>
             Hopkinton Education Foundation is a non-profit organization that
@@ -79,20 +85,17 @@ export default ({transition}) => (
 
       <Block title="Skills">
         <h4>Primary Technologies</h4>
-        <p>HTML5, CSS3, JavaScript (ES5, ES6, ES7), React, NodeJS, Git</p>
+        <p>HTML5, CSS3, JavaScript (ES5, ES6), React, NodeJS, Git</p>
         <h4>Languages</h4>
         <p>JavaScript, Python, PHP</p>
         <h4>Libraries</h4>
         <p>React, Redux, jQuery, RxJS</p>
         <h4>Frameworks</h4>
-        <p>
-          React Native, Express, Flask, Jest •Backend: NodeJS, MongoDB, SQL,
-          WordPress
-        </p>
+        <p>React Native, Express, Flask, Jest</p>
+        <h4>Backend</h4>
+        <p>Backend: NodeJS, MongoDB, SQL, WordPress</p>
         <h4>Other</h4>
-        <p>
-          Webpack, Gulp, Git, npm, yarn, bash, AJAX, JSON, XML, Adobe XD, Sketch
-        </p>
+        <p>Webpack, Gulp, Git, npm, yarn, bash, AJAX, JSON, XML, Adobe XD, Sketch</p>
       </Block>
 
       <Block title="Education">
@@ -106,7 +109,7 @@ export default ({transition}) => (
           Web Developer Bootcamp & Learn and Understand NodeJS Certificate
         </h4>
         <p>
-          <a href='https://www.udemy.com/user/mike-r/'>Udemy</a>
+          <a href="https://www.udemy.com/user/mike-r/">Udemy</a>
         </p>
         <h4>Web Development Courses</h4>
         <p>

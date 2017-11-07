@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import {colors} from '../theme';
+import React from 'react';
+import Link from 'gatsby-link';
+import styled from 'styled-components';
+import { colors } from '../theme';
 
 const PostPreview = styled.div`
   margin-bottom: 20px;
@@ -18,7 +18,9 @@ const BlogLink = styled(Link)`
   text-decoration: none;
 `;
 
-export default ({ title, date, excerpt, timeToRead, slug }) => (
+export default ({
+  title, date, excerpt, timeToRead, slug,
+}) => (
   <PostPreview>
     <Title>
       <BlogLink to={slug}>{title}</BlogLink>

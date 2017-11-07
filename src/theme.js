@@ -1,26 +1,30 @@
 const colors = {
-  primary: '#EF476F',
-  secondary: '#F1FAEE',
-  bg: '#F9FAF7',
-  logo: '#9733EE',
-  nav: "#EF476F",
-  snow: '#FDFFFC',
-  lightsnow: '#F9FAF7',
+  primary: '#61DAFB',
+  secondary: '#FD8FA2',
+  bg: '#ffffff',
+  dark_bg: '#EEE9DB',
+  dark_accent: '#282C34',
+  light_accent: '#A0A7AE',
+  snow: '#F9FAF7',
   white: '#ffffff',
   black: '#000000',
-  orange: '#FE8C01',
-}
-
-const SIZES = {
-  xsmall: {min: 0, max: 599},
-  small: {min: 600, max: 779},
-  medium: {min: 780, max: 979},
-  large: {min: 980, max: 1279},
-  xlarge: {min: 1280, max: 1339},
-  xxlarge: {min: 1340, max: Infinity},
-
-  largerSidebar: {min: 1100, max: 1339},
-  sidebarFixed: {min: 2000, max: Infinity},
 };
 
-export default {colors, SIZES}
+const sizes = {
+  mobile: '(min-width: 400px)',
+  Mobile: '@media (min-width: 400px)',
+  phablet: '(min-width: 550px)',
+  Phablet: '@media (min-width: 550px)',
+  tablet: '(min-width: 750px)',
+  Tablet: '@media (min-width: 750px)',
+  desktop: '(min-width: 1000px)',
+  Desktop: '@media (min-width: 1000px)',
+  hd: '(min-width: 1200px)',
+  Hd: '@media (min-width: 1200px)',
+  VHd: '@media (min-width: 1450px)',
+  VVHd: '@media (min-width: 1650px)',
+  largerSidebar: { min: 1100, max: 1339 },
+  sidebarFixed: { min: 2000, max: Infinity },
+};
+
+export { colors, sizes };

@@ -1,17 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import BlogPostPreview from '../components/BlogPostPreview';
-import PageTitle from '../components/PageTitle';
 
-export default ({data, transition}) => (
+export default ({ data, transition }) => (
   <div style={transition && transition.style}>
-    <PageTitle>
-      <h1>Blog</h1>
-    </PageTitle>
+    <h1>Blog</h1>
     <p>{data.allMarkdownRemark.totalCount} Posts</p>
     <div>
-      {data.allMarkdownRemark.edges.map(({node}) => (
+      {data.allMarkdownRemark.edges.map(({ node }) => (
         <BlogPostPreview
           key={node.frontmatter.title}
           title={node.frontmatter.title}
