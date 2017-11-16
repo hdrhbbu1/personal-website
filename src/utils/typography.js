@@ -1,9 +1,9 @@
 import Typography from 'typography';
 
 const typography = new Typography({
-  baseFontSize: '17px',
+  baseFontSize: '16px',
+  baseLineHeight: 1.5,
   headerFontFamily: [
-    'Source Sans Pro',
     'Roboto',
     '-apple-system',
     'BlinkMacSystemFont',
@@ -17,7 +17,6 @@ const typography = new Typography({
     'sans-serif',
   ],
   bodyFontFamily: [
-    'Source Sans Pro',
     'Roboto',
     '-apple-system',
     'BlinkMacSystemFont',

@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, {createElement} from 'react';
-import {Transition, TransitionGroup} from 'react-transition-group';
+import React, { createElement } from 'react';
+import { Transition, TransitionGroup } from 'react-transition-group';
 import getTransitionStyle from './src/utils/getTransitionStyle';
 
-const ReplaceComponentRenderer = ({props}) => {
+const ReplaceComponentRenderer = ({ props }) => {
   if (props.layout) {
     return undefined;
   }
@@ -14,7 +14,8 @@ const ReplaceComponentRenderer = ({props}) => {
       <Transition
         key={props.location.pathname}
         timeout={timeout}
-        unmountOnExit={true}>
+        unmountOnExit
+      >
         {status =>
           createElement(props.pageResources.component, {
             ...props,
@@ -22,7 +23,7 @@ const ReplaceComponentRenderer = ({props}) => {
             transition: {
               status,
               timeout,
-              style: getTransitionStyle({status, timeout}),
+              style: getTransitionStyle({ status, timeout }),
             },
           })}
       </Transition>
@@ -31,3 +32,7 @@ const ReplaceComponentRenderer = ({props}) => {
 };
 
 exports.replaceComponentRenderer = ReplaceComponentRenderer;
+
+exports.onRouteUpdate = ({ location }) => {
+  console.log('You routed to a new location', location);
+};

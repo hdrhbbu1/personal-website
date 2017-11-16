@@ -3,12 +3,12 @@ const { createFilePath } = require('gatsby-source-filesystem');
 // create the slug from file path and add data to MarkdownRemark nodes.
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode, basePath: 'pages' });
     createNodeField({
       node,
       name: 'slug',
-      value: slug
+      value: slug,
     });
   }
 };
@@ -28,18 +28,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       }
-    `).then(result => {
+    `).then((result) => {
       result.data.allMarkdownRemark.edges.map(({ node }) => {
         createPage({
           path: node.fields.slug,
-          component: path.resolve(`./src/templates/blog-post.js`),
+          component: path.resolve('./src/templates/blog-post.js'),
           context: {
             // Data passed to context is available in page queries as GraphQL variables
-            slug: node.fields.slug
-          }
-        })
-      })
+            slug: node.fields.slug,
+          },
+        });
+      });
       resolve();
-    })
-  })
-}
+    });
+  });
+};

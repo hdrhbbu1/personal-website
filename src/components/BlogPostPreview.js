@@ -1,13 +1,15 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+
+import { rhythm } from '../utils/typography';
 import { colors } from '../theme';
 
 const PostPreview = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: ${rhythm(1)};
 `;
 const Title = styled.h3`
-  margin-bottom: 20px;
+  margin-bottom: ${rhythm(1 / 2)};
   display: inline-block;
   border-bottom: 3px solid ${colors.primary};
 `;

@@ -4,7 +4,6 @@ import BlogPostPreview from '../components/BlogPostPreview';
 
 export default ({ data, transition }) => (
   <div style={transition && transition.style}>
-    <h1>Blog</h1>
     <p>{data.allMarkdownRemark.totalCount} Posts</p>
     <div>
       {data.allMarkdownRemark.edges.map(({ node }) => (

@@ -1,11 +1,10 @@
 const colors = {
-  primary: '#61DAFB',
-  secondary: '#FD8FA2',
-  bg: '#ffffff',
+  primary: '#0190B7',
+  bg: '#fff',
   dark_bg: '#EEE9DB',
   dark_accent: '#282C34',
-  light_accent: '#A0A7AE',
-  snow: '#F9FAF7',
+  light_accent: 'rgba(0, 0, 0, 0.7)',
+  snow: '#F5F3F3',
   white: '#ffffff',
   black: '#000000',
 };
@@ -23,8 +22,6 @@ const sizes = {
   Hd: '@media (min-width: 1200px)',
   VHd: '@media (min-width: 1450px)',
   VVHd: '@media (min-width: 1650px)',
-  largerSidebar: { min: 1100, max: 1339 },
-  sidebarFixed: { min: 2000, max: Infinity },
 };
 
 export { colors, sizes };

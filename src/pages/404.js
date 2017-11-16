@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${colors.primary};
-  color: ${colors.snow};
+  color: ${colors.bg};
 `;
 
 const NotFoundPage = () => (

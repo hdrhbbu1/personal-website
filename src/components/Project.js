@@ -1,26 +1,26 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+
+import { rhythm } from '../utils/typography';
 import { colors } from '../theme';
 
-const Container = styled.div`
-  position: relative;
+const Card = styled.div`
   display: flex;
-  flex: 1 1 325px;
+  flex: 1 1 425px;
   justify-content: center;
   align-items: center;
-  height: 325px;
-  margin: 1px;
-  background-color: ${colors.dark_accent};
+  height: 400px;
+  margin: ${rhythm(1 / 2)};
+  border-radius: 4px;
+  background-color: ${colors.bg};
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
 
 const ProjectImage = styled(Img)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
+  margin: ${rhythm(1 / 2)};
+  height: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
 
 const ProjectTitle = styled.h2`
@@ -28,8 +28,8 @@ const ProjectTitle = styled.h2`
 `;
 
 // <Img sizes={sizes} title={`Image of ${name}`} />
-export default ({ name, sizes }) => (
-  <Container>
+export default ({ name, sizes, color }) => (
+  <Card>
     <ProjectTitle>{name}</ProjectTitle>
-  </Container>
+  </Card>
 );

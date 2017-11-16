@@ -1,33 +1,65 @@
 import React from 'react';
-import styled, { ThemeProvider, injectGlobal } from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
 import Navigation from '../components/Navigation';
 import MobileNavigation from '../components/MobileNavigation';
+import PageHeader from '../components/PageHeader';
 
+import { rhythm } from '../utils/typography';
 import { colors } from '../theme';
 
 const Container = styled.div`
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  max-width: 960px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 `;
 
 const Content = styled.div`
-  padding: 1rem;
+  margin: ${rhythm(2)} auto;
+  padding: ${rhythm(1)};
+  height: 100vh;
+  max-width: 1000px;
 `;
 
-export default ({ children, data }) => (
-  <Container>
-    <Navigation title={data.site.siteMetadata.title} />
-    <Content>{children()}</Content>
-    <MobileNavigation />
-  </Container>
-);
+class Index extends React.Component {
+  render() {
+    const path = this.props.location.pathname;
+    let title;
+    switch (path) {
+      case '/':
+        title = 'User Interface / Web Developer';
+        break;
+      case '/about':
+        title = 'About';
+        break;
+      case '/blog':
+        title = 'Blog';
+        break;
+      case '/contact':
+        title = 'Contact';
+        break;
+      case '/portfolio':
+        title = 'Portfolio';
+        break;
+      default:
+        title = 'Header';
+        break;
+    }
+    return (
+      <Container>
+        <Navigation hasPageHeader title={this.props.data.site.siteMetadata.title} />
+        <PageHeader display title={title} />
+        <Content>{this.props.children()}</Content>
+        <MobileNavigation />
+      </Container>
+    );
+  }
+}
 
 injectGlobal`
   html {
     box-sizing: border-box;
-    font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
   }
@@ -35,7 +67,7 @@ injectGlobal`
   body {
     overflow-x: hidden;
     position: relative;
-    background: ${colors.bg};
+    background-color: ${colors.bg};
   }
 
   * {
@@ -45,6 +77,10 @@ injectGlobal`
 
   *, *::before, *::after {
     box-sizing: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
   }
 
   a {
@@ -76,3 +112,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default Index;

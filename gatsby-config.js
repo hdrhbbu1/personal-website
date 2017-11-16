@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Michael T. Reilly',
+    description: 'Web Developer / User Interface Design',
   },
   plugins: [
     'gatsby-transformer-sharp',

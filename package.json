@@ -20,10 +20,14 @@
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.17",
     "gatsby-transformer-sharp": "^1.6.13",
-    "react-transition-group": "^2.2.1"
+    "react-flip-move": "^2.9.17",
+    "react-transition-group": "^2.2.1",
+    "trianglify": "^1.2.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-preset-flow": "^6.23.0",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-google": "^0.9.1",

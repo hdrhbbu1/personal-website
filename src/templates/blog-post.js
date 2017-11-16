@@ -5,10 +5,10 @@ export default ({ data, transition }) => {
   return (
     <div style={transition && transition.style}>
       <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />   
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -19,4 +19,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
