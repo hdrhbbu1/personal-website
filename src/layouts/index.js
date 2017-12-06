@@ -3,7 +3,6 @@ import styled, { injectGlobal } from 'styled-components';
 
 import Navigation from '../components/Navigation';
 import MobileNavigation from '../components/MobileNavigation';
-import PageHeader from '../components/PageHeader';
 
 import { rhythm } from '../utils/typography';
 import { colors } from '../theme';
@@ -24,32 +23,13 @@ const Content = styled.div`
 
 class Index extends React.Component {
   render() {
-    const path = this.props.location.pathname;
-    let title;
-    switch (path) {
-      case '/':
-        title = 'User Interface / Web Developer';
-        break;
-      case '/about':
-        title = 'About';
-        break;
-      case '/blog':
-        title = 'Blog';
-        break;
-      case '/contact':
-        title = 'Contact';
-        break;
-      case '/portfolio':
-        title = 'Portfolio';
-        break;
-      default:
-        title = 'Header';
-        break;
-    }
+    // const path = this.props.location.pathname;
     return (
       <Container>
-        <Navigation hasPageHeader title={this.props.data.site.siteMetadata.title} />
-        <PageHeader display title={title} />
+        <Navigation
+          hasPageHeader
+          title={this.props.data.site.siteMetadata.title}
+        />
         <Content>{this.props.children()}</Content>
         <MobileNavigation />
       </Container>
@@ -80,7 +60,7 @@ injectGlobal`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   a {

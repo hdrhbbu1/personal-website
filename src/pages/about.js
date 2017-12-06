@@ -14,8 +14,16 @@ ${sizes.Desktop} {
 }
 `;
 
+const Header = styled.header`
+  text-align: center;
+  padding: 50px;
+`;
+
 export default ({ transition }) => (
   <div style={transition && transition.style}>
+    <Header>
+      <h1>About</h1>
+    </Header>
     <Wrapper>
       <Block title="Hello">
         <p>

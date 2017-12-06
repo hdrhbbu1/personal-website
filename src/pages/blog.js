@@ -1,10 +1,18 @@
 import React from 'react';
-
+import styled from 'styled-components';
 import BlogPostPreview from '../components/BlogPostPreview';
+
+const Header = styled.header`
+  text-align: center;
+  padding: 50px;
+`;
 
 export default ({ data, transition }) => (
   <div style={transition && transition.style}>
-    <p>{data.allMarkdownRemark.totalCount} Posts</p>
+    <Header>
+      <h1>Blog</h1>
+      <p>{data.allMarkdownRemark.totalCount} Posts</p>
+    </Header>
     <div>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <BlogPostPreview

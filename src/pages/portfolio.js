@@ -11,8 +11,17 @@ const Container = styled.div`
   justify-content: flex-start;
 `;
 
+const Header = styled.header`
+  text-align: center;
+  padding: 50px;
+`;
+
 export default ({ transition, data }) => (
   <div style={transition && transition.style}>
+    <Header>
+      <h1>Portfolio</h1>
+      <p>A list of projects I have worked on.</p>
+    </Header>
     <Container>
       <Project name="Chaga Midwest" sizes={data.chagaImage.sizes} />
       <Project name="Source News" sizes={data.newsImage.sizes} />

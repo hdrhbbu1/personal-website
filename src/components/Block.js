@@ -13,8 +13,10 @@ const StyledBlock = styled.div`
     position: relative;
     flex-flow: column nowrap;
     margin: ${rhythm(1)} auto;
-    border-left: 3px solid ${colors.primary};
-    border-radius: 5px;
+    border-left: 2px solid;
+    border-image: linear-gradient(to bottom, #fc466b, #3f5efb);
+    border-image-slice: 2;
+    border-radius: 2px;
     background-color: ${colors.bg};
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     &::after {

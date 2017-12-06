@@ -5,6 +5,10 @@ import Link from 'gatsby-link';
 import { rhythm } from '../utils/typography';
 import { colors, sizes } from '../theme';
 
+import github from '../assets/github_icon.svg';
+import codepen from '../assets/codepen_icon.svg';
+import linkedin from '../assets/linkedin_icon.svg';
+
 const Navigation = styled.header`
   position: absolute;
   left: 0;
@@ -35,11 +39,14 @@ const LogoSection = styled.li`
 `;
 
 const PrimarySection = styled.li`
-  display: flex;
+  display: none;
   margin-left: ${rhythm(2)};
   justify-content: center;
-  > a:nth-child(2) {
-    margin: 0 ${rhythm(1)};
+  > a {
+    margin: 0 ${rhythm(0.3)};
+  }
+  ${sizes.Tablet} {
+    display: flex;
   }
 `;
 
@@ -54,19 +61,21 @@ const SocialSection = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: ${colors.bg};
-  font-weight: 300;
+  color: ${colors.primary};
+  font-weight: 400;
   &:after {
     content: '';
     display: block;
-    width: 0;
+    width: 100%;
     height: 3px;
-    background: transparent;
-    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.530, 0, 0.380, 1), opacity 0.3s cubic-bezier(0.530, 0, 0.380, 1);
+    transform: translateY(5px);
+    background-color: ${colors.primary};
   }
   &:hover:after {
-    width: 100%;
-    background: ${colors.primary};
+    transform: translateY(0);
+    opacity: 1;
   }
 `;
 
@@ -83,13 +92,20 @@ export default ({ title, hasPageHeader }) => (
         </LogoSection>
         <PrimarySection>
           <NavLink to="/portfolio">Portfolio</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </PrimarySection>
         <SocialSection>
-          <SocialLink href="https://github.com/reillym">Github</SocialLink>
-          <SocialLink href="#">Codepen</SocialLink>
-          <SocialLink href="#">LinkedIn</SocialLink>
+          <SocialLink href="https://github.com/reillym">
+            <img height="30" width="30" src={github} alt="github" />
+          </SocialLink>
+          <SocialLink href="#">
+            <img height="30" width="30" src={codepen} alt="codepen" />
+          </SocialLink>
+          <SocialLink href="#">
+            <img height="30" width="23" src={linkedin} alt="linkedin" />
+          </SocialLink>
         </SocialSection>
       </RootNav>
     </Container>

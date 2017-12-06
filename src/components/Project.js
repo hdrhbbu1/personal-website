@@ -7,6 +7,7 @@ import { colors } from '../theme';
 
 const Card = styled.div`
   display: flex;
+  position: relative;
   flex: 1 1 425px;
   justify-content: center;
   align-items: center;
@@ -18,11 +19,13 @@ const Card = styled.div`
 `;
 
 const ProjectImage = styled(Img)`
+  position: absolute;
   margin: ${rhythm(1 / 2)};
-  height: 600px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
-
+const other = {
+  height: '600px',
+  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
+};
 const ProjectTitle = styled.h2`
   color: ${colors.primary};
 `;
@@ -30,6 +33,7 @@ const ProjectTitle = styled.h2`
 // <Img sizes={sizes} title={`Image of ${name}`} />
 export default ({ name, sizes, color }) => (
   <Card>
+    <ProjectImage sizes={sizes} />
     <ProjectTitle>{name}</ProjectTitle>
   </Card>
 );
