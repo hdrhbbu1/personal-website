@@ -10,12 +10,23 @@ import codepen from '../assets/codepen_icon.svg';
 import linkedin from '../assets/linkedin_icon.svg';
 
 const Navigation = styled.header`
-  position: absolute;
+  position: relative;
   left: 0;
-  top: 10px;
+  top: 0px;
   height: 50px;
+  padding-top: 10px;
   width: 100%;
   z-index: 500;
+  margin: 0;
+  &::before {
+    position: absolute;
+    top: 0;
+    display: block;
+    content: '';
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(to right, #fc466b, #3f5efb);
+  }
 `;
 
 const Container = styled.div`
@@ -36,6 +47,7 @@ const RootNav = styled.ul`
 const LogoSection = styled.li`
   margin-left: ${rhythm(1)};
   justify-self: flex-start;
+  font-size: 1.1rem;
 `;
 
 const PrimarySection = styled.li`
@@ -59,10 +71,16 @@ const SocialSection = styled.li`
     margin: 0 ${rhythm(1)};
   }
 `;
-
-const NavLink = styled(Link)`
+const activeClassName = 'nav-item-active';
+const NavItem = styled(Link).attrs({
+  activeClassName,
+})`
   color: ${colors.primary};
   font-weight: 400;
+  &.${activeClassName}:after {
+    transform: translateY(0);
+    opacity: 1;
+  }
   &:after {
     content: '';
     display: block;
@@ -88,22 +106,22 @@ export default ({ title, hasPageHeader }) => (
     <Container>
       <RootNav>
         <LogoSection>
-          <NavLink to="/">{ title }</NavLink>
+          <NavItem exact to="/">{ title }</NavItem>
         </LogoSection>
         <PrimarySection>
-          <NavLink to="/portfolio">Portfolio</NavLink>
-          <NavLink to="/blog">Blog</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavItem to="/portfolio" >Portfolio</NavItem>
+          <NavItem to="/blog">Blog</NavItem>
+          <NavItem to="/about">About</NavItem>
+          <NavItem to="/contact">Contact</NavItem>
         </PrimarySection>
         <SocialSection>
-          <SocialLink href="https://github.com/reillym">
+          <SocialLink href="https://github.com/reillym" target="_blank">
             <img height="30" width="30" src={github} alt="github" />
           </SocialLink>
-          <SocialLink href="#">
+          <SocialLink href="https://codepen.io/Reillym/" target="_blank">
             <img height="30" width="30" src={codepen} alt="codepen" />
           </SocialLink>
-          <SocialLink href="#">
+          <SocialLink href="https://www.linkedin.com/in/michael-reilly-305075126/" target="_blank">
             <img height="30" width="23" src={linkedin} alt="linkedin" />
           </SocialLink>
         </SocialSection>

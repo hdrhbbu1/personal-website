@@ -8,12 +8,13 @@ const StyledBlock = styled.div`
   margin: 0;
   width: 100%;
   height: auto;
+  padding: ${rhythm(1)};
   ${sizes.Tablet} {
     display: flex;
     position: relative;
     flex-flow: column nowrap;
     margin: ${rhythm(1)} auto;
-    border-left: 2px solid;
+    border-left: 3px solid;
     border-image: linear-gradient(to bottom, #fc466b, #3f5efb);
     border-image-slice: 2;
     border-radius: 2px;

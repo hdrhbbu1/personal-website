@@ -7,6 +7,9 @@ const colors = {
   snow: '#F5F3F3',
   white: '#ffffff',
   black: '#000000',
+  project1: 'rgb(120, 171, 66)',
+  project2: '#50E4C2',
+  project3: '#23447E',
 };
 
 const sizes = {

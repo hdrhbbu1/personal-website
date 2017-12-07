@@ -1,11 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import BlogPostPreview from '../components/BlogPostPreview';
 
-const Header = styled.header`
-  text-align: center;
-  padding: 50px;
-`;
+import Header from '../components/Header';
+import { colors } from '../theme';
 
 export default ({ data, transition }) => (
   <div style={transition && transition.style}>

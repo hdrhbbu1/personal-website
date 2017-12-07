@@ -1,6 +1,6 @@
+import 'prismjs/themes/prism-solarizedlight.css';
 import React from 'react';
 import styled, { injectGlobal } from 'styled-components';
-
 import Navigation from '../components/Navigation';
 import MobileNavigation from '../components/MobileNavigation';
 
@@ -15,19 +15,17 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  margin: ${rhythm(2)} auto;
-  padding: ${rhythm(1)};
+  margin: ${rhythm(1)} auto;
   height: 100vh;
   max-width: 1000px;
 `;
 
 class Index extends React.Component {
   render() {
-    // const path = this.props.location.pathname;
+    const path = this.props.location.pathname;
     return (
       <Container>
         <Navigation
-          hasPageHeader
           title={this.props.data.site.siteMetadata.title}
         />
         <Content>{this.props.children()}</Content>
@@ -60,7 +58,7 @@ injectGlobal`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
+    font-weight: 500;
   }
 
   a {

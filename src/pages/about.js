@@ -2,21 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Block from '../components/Block';
-
+import Header from '../components/Header';
+import { rhythm } from '../utils/typography';
 import { colors, sizes } from '../theme';
 
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 3em 0;
-${sizes.Desktop} {
-  padding: 2em 0;
-}
-`;
-
-const Header = styled.header`
-  text-align: center;
-  padding: 50px;
+  padding: ${rhythm(2)} 0;
+  ${sizes.Desktop} {
+    padding: ${rhythm(3)} 0;
+  }
 `;
 
 export default ({ transition }) => (
@@ -27,10 +23,10 @@ export default ({ transition }) => (
     <Wrapper>
       <Block title="Hello">
         <p>
-        I'm a Web Developer in Massachussets. I currently freelance, and study
-        computer science and web development through online courses and books. I
-        enjoy building user interfaces, working with data, optimizing
-        performance, and drumming.
+          I'm a Web Developer currently residing in Massachussets. I freelance, study
+          computer science and web development through online courses and books. I
+          enjoy building user interfaces, working with data, optimizing
+          performance, and drumming.
         </p>
       </Block>
 

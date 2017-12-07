@@ -7,4 +7,4 @@ date: "2017-08-10"
 
 An **Observable** is a collection that arrives over time. It can be used to model events, asynchronous requests, and animations.
 
-TODO
+To be continued...

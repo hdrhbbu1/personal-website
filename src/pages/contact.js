@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
+import Header from '../components/Header';
 
 const EmailLink = styled.a`color: ${colors.primary};`;
-
-const Header = styled.header`
-  text-align: center;
-  padding: 50px;
-`;
 
 export default ({ transition }) => (
   <div style={transition && transition.style}>

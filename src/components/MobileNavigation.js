@@ -8,7 +8,7 @@ const NavLink = styled(Link)`
   color: ${colors.primary};
   text-align: center;
   text-decoration: none;
-  padding: 0.8em;
+  padding: 10px 20px;
 `;
 
 const MobileNavItem = ({ linkTo, label }) => (
@@ -26,7 +26,7 @@ const MobileNavigation = styled.div`
   left: 0;
   right: 0;
   background: ${colors.bg};
-  box-shadow: 0px -10px 23px -18px rgba(0, 0, 0, 1);
+  box-shadow: 0px -8px 23px -18px rgba(0, 0, 0, 0.7);
   ${sizes.Tablet} {
     display: none;
   }

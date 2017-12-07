@@ -25,7 +25,19 @@ module.exports = {
       options: { pathToConfigModule: 'src/utils/typography.js' },
     },
     'gatsby-plugin-offline',
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'language-',
+            },
+          },
+        ],
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-next',
   ],

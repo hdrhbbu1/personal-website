@@ -7,7 +7,7 @@ const ReplaceComponentRenderer = ({ props }) => {
   if (props.layout) {
     return undefined;
   }
-  const timeout = 250;
+  const timeout = 200;
   // else page
   return (
     <TransitionGroup>
