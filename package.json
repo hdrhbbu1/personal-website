@@ -22,6 +22,7 @@
     "gatsby-transformer-remark": "^1.7.17",
     "gatsby-transformer-sharp": "^1.6.13",
     "react-flip-move": "^2.9.17",
+    "react-particles-js": "^2.1.0",
     "react-transition-group": "^2.2.1",
     "trianglify": "^1.2.0"
   },

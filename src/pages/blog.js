@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogPostPreview from '../components/BlogPostPreview';
 
+import Container from '../components/Container';
 import Header from '../components/Header';
 import { colors } from '../theme';
 
@@ -10,10 +11,11 @@ export default ({ data, transition }) => (
       <h1>Blog</h1>
       <p>{data.allMarkdownRemark.totalCount} Posts</p>
     </Header>
-    <div>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
+    <Container width="1000px">
+      {data.allMarkdownRemark.edges.map(({ node }, i) => (
         <BlogPostPreview
           key={node.frontmatter.title}
+          id={i + 1}
           title={node.frontmatter.title}
           date={node.frontmatter.date}
           excerpt={node.excerpt}
@@ -21,7 +23,7 @@ export default ({ data, transition }) => (
           slug={node.fields.slug}
         />
       ))}
-    </div>
+    </Container>
   </div>
 );
 

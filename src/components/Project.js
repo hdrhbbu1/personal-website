@@ -1,6 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { rhythm } from '../utils/typography';
 import { colors, sizes } from '../theme';
@@ -15,15 +16,26 @@ const Container = styled.div`
 `;
 
 const Image = styled(Img)`
-  transition: all 0.3s ease-in-out;
   z-index: 1000;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.05);
-  }
+  transform: scale(0);
+  animation: 0.75s grow ${props => (props.id ? `${(0.15 * props.id) + 0.1}s` : '0.7s')} forwards cubic-bezier(.51,.47,.61,.97);
+  opacity: 0;
   ${sizes.Tablet} {
     max-width: 800px;
     margin: 0 auto;
+  }
+  @keyframes grow {
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 `;
 
@@ -41,11 +53,20 @@ const BgImage = styled(Img)`
   }
 `;
 
-const ProjectTitle = styled.h2`
-  color: ${colors.primary};
-`;
-
-// <Img sizes={sizes} title={`Image of ${name}`} />
-export default ({ name, sizes, color }) => (
-  <Image sizes={sizes} />
+const Project = ({
+  id, name, sizes, color,
+}) => (
+  <Image id={id} sizes={sizes} title={`Image of ${name}`} />
 );
+
+Project.defaultProps = {
+  color: 'white',
+};
+
+Project.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  color: PropTypes.string,
+};
+
+export default Project;

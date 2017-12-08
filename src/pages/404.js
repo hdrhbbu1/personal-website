@@ -4,17 +4,24 @@ import { colors } from '../theme';
 
 const Wrapper = styled.div`
   display: flex;
-  height: 600px;
+  height: 80vh;
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: ${colors.primary};
-  color: ${colors.bg};
+  color: ${colors.primary};
+`;
+
+const GradientH1 = styled.h1`
+  background: linear-gradient(to right, #fc466b, #3f5efb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2.5rem;
 `;
 
 const NotFoundPage = () => (
   <Wrapper>
-    <h1>404 NOT FOUND</h1>
+    <GradientH1>404 NOT FOUND</GradientH1>
   </Wrapper>
 );
 

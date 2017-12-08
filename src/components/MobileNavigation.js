@@ -3,12 +3,22 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 
 import { colors, sizes } from '../theme';
+import { rhythm } from '../utils/typography';
 
-const NavLink = styled(Link)`
+const activeClassName = 'mobile-nav-item-active';
+const NavLink = styled(Link).attrs({
+  activeClassName,
+})`
   color: ${colors.primary};
   text-align: center;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: ${rhythm(1 / 3)} 0;
+  flex: 1 1 25%;
+  background-color: white;
+  &.${activeClassName} {
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+  }
 `;
 
 const MobileNavItem = ({ linkTo, label }) => (
@@ -26,7 +36,18 @@ const MobileNavigation = styled.div`
   left: 0;
   right: 0;
   background: ${colors.bg};
-  box-shadow: 0px -8px 23px -18px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px -8px 20px -18px rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  &::before {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    content: '';
+    height: 44px;
+    width: 100%;
+    background: linear-gradient(to right, #fc466b, #3f5efb);
+    z-index: -1;
+  }
   ${sizes.Tablet} {
     display: none;
   }

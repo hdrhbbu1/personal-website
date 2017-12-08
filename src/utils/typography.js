@@ -4,6 +4,7 @@ const typography = new Typography({
   baseFontSize: '17px',
   baseLineHeight: 1.5,
   headerFontFamily: [
+    'Helvetica Neue',
     'Roboto',
     '-apple-system',
     'BlinkMacSystemFont',

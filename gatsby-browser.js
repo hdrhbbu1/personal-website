@@ -7,7 +7,7 @@ const ReplaceComponentRenderer = ({ props }) => {
   if (props.layout) {
     return undefined;
   }
-  const timeout = 200;
+  const timeout = 275;
   // else page
   return (
     <TransitionGroup>
@@ -34,5 +34,5 @@ const ReplaceComponentRenderer = ({ props }) => {
 exports.replaceComponentRenderer = ReplaceComponentRenderer;
 
 exports.onRouteUpdate = ({ location }) => {
-  console.log('You routed to a new location', location);
+  // do something
 };

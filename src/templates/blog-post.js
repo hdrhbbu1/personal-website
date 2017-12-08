@@ -1,6 +1,10 @@
 import React from 'react';
-import { colors } from '../theme';
+
+import Container from '../components/Container';
 import Header from '../components/Header';
+import Wrapper from '../components/Wrapper';
+
+import { colors } from '../theme';
 
 
 export default ({ data, transition }) => {
@@ -10,7 +14,9 @@ export default ({ data, transition }) => {
       <Header>
         <h1>{post.frontmatter.title}</h1>
       </Header>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Container width="1000px">
+        <Wrapper dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Container>
     </div>
   );
 };

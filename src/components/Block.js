@@ -1,24 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { rhythm } from '../utils/typography';
 import { colors, sizes } from '../theme';
 
-const StyledBlock = styled.div`
+const AnimatedContainer = styled.div`
+  position: relative;
   margin: 0;
   width: 100%;
-  height: auto;
   padding: ${rhythm(1)};
+  opacity: 0;
+  border-radius: 3px;
+  background-color: ${colors.bg};
+  animation: 0.5s slideInUp
+    ${props => (props.id ? `${(0.1 * props.id) + 0.1}s` : '0.75s')} forwards
+    cubic-bezier(0, 0.26, 0.21, 1.01);
+  z-index: 1;
   ${sizes.Tablet} {
     display: flex;
-    position: relative;
     flex-flow: column nowrap;
     margin: ${rhythm(1)} auto;
-    border-left: 3px solid;
-    border-image: linear-gradient(to bottom, #fc466b, #3f5efb);
-    border-image-slice: 2;
-    border-radius: 2px;
-    background-color: ${colors.bg};
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     &::after {
       content: '';
@@ -26,29 +28,49 @@ const StyledBlock = styled.div`
       top: 0;
       left: 0;
       bottom: 0;
-      z-index: -1;
       width: 100%;
       height: 100%;
       opacity: 0;
       border-radius: 3px;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
       transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+      z-index: -1000;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, #fc466b, #3f5efb);
+      border-radius: 3px 0 0 3px;
+      z-index: -100;
     }
     &:hover::after {
+      opacity: 1;
+    }
+  }
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(75px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
       opacity: 1;
     }
   }
 `;
 
 const Title = styled.h2`
-  position: relative;
   text-align: center;
-  color: ${colors.primary};
   ${sizes.Tablet} {
     position: absolute:
     top: 0;
-    margin: ${rhythm(1)} 0;
-    align-self: center;
+    padding: ${rhythm(1 / 3)} 0;
     transition: all 0.1s cubic-bezier(0.57, 0.21, 0.69, 1.25);
   }
 `;
@@ -61,22 +83,25 @@ const Text = styled.div`
   }
 `;
 
-class Block extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showText: true,
-    };
-  }
-
+class Block extends React.PureComponent {
   render() {
-    const { showText } = this.state;
+    const { id, title, children } = this.props;
     return (
-      <StyledBlock>
-        <Title showText={showText}>{this.props.title}</Title>
-        {showText && <Text>{this.props.children}</Text>}
-      </StyledBlock>);
+      <AnimatedContainer id={id}>
+        <Title>{title}</Title>
+        <Text>{children}</Text>
+      </AnimatedContainer>
+    );
   }
 }
+
+Block.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string.isRequired,
+};
+
+Block.defaultProps = {
+  id: undefined,
+};
 
 export default Block;

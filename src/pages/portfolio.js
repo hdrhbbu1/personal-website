@@ -19,9 +19,9 @@ export default ({ transition, data }) => (
       <h1>Portfolio</h1>
       <p>A list of projects I have worked on.</p>
     </Header>
-    <Project name="Chaga Midwest" sizes={data.chagaImage.sizes} color={colors.project1} />
-    <Project name="Source News" sizes={data.newsImage.sizes} color={colors.project2} />
-    <Project name="HEF" sizes={data.hefImage.sizes} color={colors.project3} />
+    <Project id={1} name="Chaga Midwest" sizes={data.chagaImage.sizes} color={colors.project1} />
+    <Project id={2} name="Source News" sizes={data.newsImage.sizes} color={colors.project2} />
+    <Project id={3} name="HEF" sizes={data.hefImage.sizes} color={colors.project3} />
   </div>
 );
 

@@ -13,11 +13,13 @@ const Navigation = styled.header`
   position: relative;
   left: 0;
   top: 0px;
-  height: 50px;
-  padding-top: 10px;
+  height: 60px;
+  padding-top: 17px;
   width: 100%;
-  z-index: 500;
   margin: 0;
+  font-size: 1.1rem;
+  background-color: transparent;
+  z-index: 1000;
   &::before {
     position: absolute;
     top: 0;
