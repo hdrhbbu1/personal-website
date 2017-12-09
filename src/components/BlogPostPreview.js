@@ -54,7 +54,7 @@ const Title = styled.h3`
     content: '';
     width: 100%;
     height: 3px;
-    background: linear-gradient(to right, #fc466b, #3f5efb);
+    background: ${colors.primary_gradient};
   }
 `;
 const Excerpt = styled.p`

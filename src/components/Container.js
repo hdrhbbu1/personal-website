@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { rhythm } from '../utils/typography';
 
 const Container = styled.div`
-  margin: ${rhythm(1)} auto;
+  margin: 0 auto;
   ${props => props.width && `max-width: ${props.width}`}
 `;
 

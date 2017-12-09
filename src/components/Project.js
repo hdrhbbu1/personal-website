@@ -18,7 +18,7 @@ const Container = styled.div`
 const Image = styled(Img)`
   z-index: 1000;
   transform: scale(0);
-  animation: 0.75s grow ${props => (props.id ? `${(0.15 * props.id) + 0.1}s` : '0.7s')} forwards cubic-bezier(.51,.47,.61,.97);
+  animation: 0.75s grow ${props => (props.id ? `${(0.2 * props.id) + 0.1}s` : '0.7s')} forwards cubic-bezier(.51,.47,.61,.97);
   opacity: 0;
   ${sizes.Tablet} {
     max-width: 800px;

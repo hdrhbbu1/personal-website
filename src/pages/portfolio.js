@@ -7,12 +7,6 @@ import Header from '../components/Header';
 import { rhythm } from '../utils/typography';
 import { colors } from '../theme';
 
-const Container = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-`;
-
 export default ({ transition, data }) => (
   <div style={transition && transition.style}>
     <Header>

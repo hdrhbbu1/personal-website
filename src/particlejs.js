@@ -1,10 +1,10 @@
 const config = {
   particles: {
     number: {
-      value: 100,
+      value: 50,
       density: {
         enable: true,
-        value_area: 800,
+        value_area: 600,
       },
     },
     color: {
@@ -28,7 +28,7 @@ const config = {
       },
     },
     size: {
-      value: 5,
+      value: 4,
       random: true,
       anim: {
         enable: false,
@@ -39,10 +39,6 @@ const config = {
     },
     line_linked: {
       enable: false,
-      distance: 500,
-      color: '#ffffff',
-      opacity: 0.4,
-      width: 2,
     },
     move: {
       enable: true,

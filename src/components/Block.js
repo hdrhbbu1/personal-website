@@ -9,7 +9,8 @@ const AnimatedContainer = styled.div`
   position: relative;
   margin: 0;
   width: 100%;
-  padding: ${rhythm(1)};
+  padding: ${rhythm(1 / 2)} ${rhythm(1)};
+  margin-bottom: ${rhythm(2)};
   opacity: 0;
   border-radius: 3px;
   background-color: ${colors.bg};
@@ -17,6 +18,18 @@ const AnimatedContainer = styled.div`
     ${props => (props.id ? `${(0.1 * props.id) + 0.1}s` : '0.75s')} forwards
     cubic-bezier(0, 0.26, 0.21, 1.01);
   z-index: 1;
+  &::before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: ${colors.primary_gradientv2};
+      border-radius: 3px 0 0 3px;
+      z-index: -100;
+    }
   ${sizes.Tablet} {
     display: flex;
     flex-flow: column nowrap;
@@ -45,7 +58,7 @@ const AnimatedContainer = styled.div`
       top: 0;
       left: 0;
       bottom: 0;
-      background: linear-gradient(to bottom, #fc466b, #3f5efb);
+      background: ${colors.primary_gradientv2};
       border-radius: 3px 0 0 3px;
       z-index: -100;
     }
@@ -66,17 +79,20 @@ const AnimatedContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  text-align: center;
+  display: inline-block;
+  text-align: left;
+  margin-left: ${rhythm(1 / 3)};
   ${sizes.Tablet} {
     position: absolute:
     top: 0;
     padding: ${rhythm(1 / 3)} 0;
+    text-align: center;
     transition: all 0.1s cubic-bezier(0.57, 0.21, 0.69, 1.25);
   }
 `;
 
 const Text = styled.div`
-  padding: ${rhythm(1 / 2)};
+  padding: ${rhythm(1 / 3)};
   transition: all 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
   ${sizes.Desktop} {
     padding: ${rhythm(1)};

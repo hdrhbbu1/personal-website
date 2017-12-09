@@ -12,11 +12,10 @@ const Header = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 45vh;
+  padding-bottom: 60px;
+  height: 100vh;
   overflow: hidden;
-  background: linear-gradient(157deg, #fc466b 4%, #3f5efb 96%);
-  transform-style: preserve-3d;
-  perspective: 100px;
+  background: ${colors.primary_gradientv3};
   > h1 {
     font-weight: 300;
   }
@@ -29,7 +28,8 @@ const CenterScreen = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 85vh;
+  height: 100vh;
+  background: white;
 `;
 
 const Svg = styled.svg`
@@ -51,9 +51,6 @@ export default ({ transition, data }) => (
         position: 'absolute', top: 0, left: 0, background: 'transparent', zIndex: 1,
       }}
     />
-    {/* <Header>
-      <h1>Web / API / UI / Developer</h1>
-    </Header> */}
     <CenterScreen>
       <Svg viewBox="0 0 100 100">
         <defs>
@@ -64,19 +61,9 @@ export default ({ transition, data }) => (
         </defs>
         <g>
           <Circle cx="50" cy="50" r="25" stroke="url(#gradient)" />
-          <text x="49.5" y="55" fontSize="16px" fontFamily="Helvetica Neue" textAnchor="middle" fill="url(#gradient)">MTR</text>
+          <text x="49.5" y="55" fontSize="16px" fontWeight="400" fontFamily="Helvetica Neue" textAnchor="middle" fill="url(#gradient)">MTR</text>
         </g>
       </Svg>
     </CenterScreen>
   </div>
 );
-
-// export const query = graphql`
-// query HomePageQuery {
-//   spaceImage: imageSharp(id: {regex: "/space/"}) {
-//     sizes(maxWidth: 1600) {
-//       ...GatsbyImageSharpSizes
-//     }
-//   }
-// }
-// `;

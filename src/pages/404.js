@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const GradientH1 = styled.h1`
-  background: linear-gradient(to right, #fc466b, #3f5efb);
+  background: ${colors.primary_gradient};
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

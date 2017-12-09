@@ -45,7 +45,7 @@ const MobileNavigation = styled.div`
     content: '';
     height: 44px;
     width: 100%;
-    background: linear-gradient(to right, #fc466b, #3f5efb);
+    background: ${colors.primary_gradient};
     z-index: -1;
   }
   ${sizes.Tablet} {

@@ -28,7 +28,6 @@ export default ({ transition }) => (
           I enjoy learning, building user interfaces, working with large amounts data, optimizing performance, deleting code, and drumming.
           </p>
         </Block>
-
         <Block id={2} title="Skills">
           <h4>Primary Technologies</h4>
           <p>HTML5, CSS3, JavaScript (ES5, ES6), React, NodeJS, Git</p>
@@ -45,27 +44,16 @@ export default ({ transition }) => (
           Webpack, Gulp, Git, npm, yarn, bash, AJAX, JSON, XML, Adobe XD, Sketch
           </p>
         </Block>
-
         <Block id={3} title="Education">
           <h4>Associates of Science in Computer Science</h4>
           <p>Normandale Community College, Bloomington, MN</p>
           <h4>Front-End Development Certificate</h4>
-          <p>
-            <a href="https://www.freecodecamp.org/reillym">Free Code Camp</a>
-          </p>
-          <h4>
-          Web Developer Bootcamp & Learn and Understand NodeJS Certificate
-          </h4>
-          <p>
-            <a href="https://www.udemy.com/user/mike-r/">Udemy</a>
-          </p>
+          <p><a href="https://www.freecodecamp.org/reillym">Free Code Camp</a></p>
+          <h4> Web Developer Bootcamp & Learn and Understand NodeJS Certificate</h4>
+          <p><a href="https://www.udemy.com/user/mike-r/">Udemy</a></p>
           <h4>Web Development Courses</h4>
-          <p>
-            <a href="https://app.pluralsight.com/profile/michael-reilly52">
-            Pluralsight
-            </a>
-          </p>
-          <h4> Web Development, Design Patterns and Algorithms</h4>
+          <p><a href="https://app.pluralsight.com/profile/michael-reilly52">Pluralsight</a></p>
+          <h4>Web Development, Design Patterns and Algorithms</h4>
           <p>Udacity</p>
           <h4>Front End Development Workshops</h4>
           <p>Frontend Masters</p>

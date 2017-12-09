@@ -10,6 +10,10 @@ const colors = {
   project1: 'rgb(120, 171, 66)',
   project2: '#50E4C2',
   project3: '#23447E',
+  primary_gradient: 'linear-gradient(to right, #fc466b, #3f5efb)',
+  primary_gradientv2: 'linear-gradient(to bottom, #fc466b, #3f5efb)',
+  primary_gradientv3: 'linear-gradient(157deg, #fc466b 4%, #3f5efb 96%)',
+
 };
 
 const sizes = {

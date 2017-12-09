@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
-
 import { rhythm } from '../utils/typography';
 import { colors, sizes } from '../theme';
 
@@ -13,8 +12,7 @@ const Navigation = styled.header`
   position: relative;
   left: 0;
   top: 0px;
-  height: 60px;
-  padding-top: 17px;
+  height: 65px;
   width: 100%;
   margin: 0;
   font-size: 1.1rem;
@@ -27,7 +25,7 @@ const Navigation = styled.header`
     content: '';
     height: 4px;
     width: 100%;
-    background: linear-gradient(to right, #fc466b, #3f5efb);
+    background: ${colors.primary_gradient};
   }
 `;
 
@@ -44,12 +42,13 @@ const RootNav = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+  top: 5px;
 `;
 
 const LogoSection = styled.li`
+  position: relative;
   margin-left: ${rhythm(1)};
   justify-self: flex-start;
-  font-size: 1.1rem;
 `;
 
 const PrimarySection = styled.li`
@@ -67,10 +66,14 @@ const PrimarySection = styled.li`
 const SocialSection = styled.li`
   position: absolute;
   display: flex;
-  top: 0;
+  top: 15px;
   right: ${rhythm(1)};
   > a:nth-child(2) {
     margin: 0 ${rhythm(1)};
+  }
+  transform: scale(0.85);
+  ${sizes.Mobile} {
+    transform: scale(1);
   }
 `;
 const activeClassName = 'nav-item-active';
@@ -87,7 +90,7 @@ const NavItem = styled(Link).attrs({
     content: '';
     display: block;
     width: 100%;
-    height: 3px;
+    height: 2px;
     opacity: 0;
     transition: transform 0.3s cubic-bezier(0.530, 0, 0.380, 1), opacity 0.3s cubic-bezier(0.530, 0, 0.380, 1);
     transform: translateY(5px);
@@ -108,7 +111,20 @@ export default ({ title, hasPageHeader }) => (
     <Container>
       <RootNav>
         <LogoSection>
-          <NavItem exact to="/">{ title }</NavItem>
+          <Link exact to="/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 100 100">
+              <defs>
+                <linearGradient id="gradient">
+                  <stop offset="5%" stopColor="#fc466b" />
+                  <stop offset="95%" stopColor="#3f5efb" />
+                </linearGradient>
+              </defs>
+              <g>
+                <circle cx="50" cy="50" r="40" stroke="black" strokeWidth="4px" fill="none" />
+                <text x="49.5" y="58" fontSize="22px" fontWeight="700" fontFamily="Helvetica Neue" textAnchor="middle" fill="black">MTR</text>
+              </g>
+            </svg>
+          </Link>
         </LogoSection>
         <PrimarySection>
           <NavItem to="/portfolio" >Portfolio</NavItem>
