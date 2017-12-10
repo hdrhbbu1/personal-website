@@ -1,36 +1,30 @@
 import 'prismjs/themes/prism-solarizedlight.css';
+
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { injectGlobal } from 'styled-components';
-
-
 import Navigation from '../components/Navigation';
 import MobileNavigation from '../components/MobileNavigation';
-
-
 import { rhythm } from '../utils/typography';
 import { colors } from '../theme';
 
 const App = styled.div`
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
 `;
 
-class Index extends React.Component {
-  render() {
-    // const path = this.props.location.pathname;
-    return (
-      <App>
-        <Navigation
-          title={this.props.data.site.siteMetadata.title}
-        />
-        {this.props.children()}
-        <MobileNavigation />
-      </App>
-    );
-  }
-}
+const Index = ({ data, children }) => (
+  <App>
+    <Navigation title={data.site.siteMetadata.title} />
+    {children()}
+    <MobileNavigation />
+  </App>
+);
+
+Index.propTypes = {
+  children: PropTypes.func.isRequired,
+  data: PropTypes.any.isRequired,
+};
 
 injectGlobal`
   html {

@@ -7,10 +7,10 @@ import Wrapper from '../components/Wrapper';
 import { colors } from '../theme';
 
 
-export default ({ data, transition }) => {
+export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div style={transition && transition.style}>
+    <div>
       <Header>
         <h1>{post.frontmatter.title}</h1>
       </Header>

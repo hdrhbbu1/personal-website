@@ -86,17 +86,21 @@ const NavItem = styled(Link).attrs({
     transform: translateY(0);
     opacity: 1;
   }
-  &:after {
+  &:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  &::after {
     content: '';
     display: block;
     width: 100%;
     height: 2px;
     opacity: 0;
-    transition: transform 0.3s cubic-bezier(0.530, 0, 0.380, 1), opacity 0.3s cubic-bezier(0.530, 0, 0.380, 1);
+    transition: transform 0.3s cubic-bezier(0.53, 0, 0.38, 1),
+      opacity 0.3s cubic-bezier(0.53, 0, 0.38, 1);
     transform: translateY(5px);
     background-color: ${colors.primary};
   }
-  &:hover:after {
+  &:hover::after {
     transform: translateY(0);
     opacity: 1;
   }
@@ -106,13 +110,18 @@ const SocialLink = styled.a`
   color: ${colors.primary};
 `;
 
-export default ({ title, hasPageHeader }) => (
+export default () => (
   <Navigation role="navigation">
     <Container>
       <RootNav>
         <LogoSection>
           <Link exact to="/">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 100 100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="60"
+              height="60"
+              viewBox="0 0 100 100"
+            >
               <defs>
                 <linearGradient id="gradient">
                   <stop offset="5%" stopColor="#fc466b" />
@@ -120,14 +129,31 @@ export default ({ title, hasPageHeader }) => (
                 </linearGradient>
               </defs>
               <g>
-                <circle cx="50" cy="50" r="40" stroke="black" strokeWidth="4px" fill="none" />
-                <text x="49.5" y="58" fontSize="22px" fontWeight="700" fontFamily="Helvetica Neue" textAnchor="middle" fill="black">MTR</text>
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  stroke="black"
+                  strokeWidth="4px"
+                  fill="none"
+                />
+                <text
+                  x="50"
+                  y="57.5"
+                  fontSize="20px"
+                  fontWeight="700"
+                  fontFamily="Helvetica Neue"
+                  textAnchor="middle"
+                  fill="black"
+                >
+                  MTR
+                </text>
               </g>
             </svg>
           </Link>
         </LogoSection>
         <PrimarySection>
-          <NavItem to="/portfolio" >Portfolio</NavItem>
+          <NavItem to="/portfolio">Portfolio</NavItem>
           <NavItem to="/blog">Blog</NavItem>
           <NavItem to="/about">About</NavItem>
           <NavItem to="/contact">Contact</NavItem>
@@ -139,7 +165,10 @@ export default ({ title, hasPageHeader }) => (
           <SocialLink href="https://codepen.io/Reillym/" target="_blank">
             <img height="30" width="30" src={codepen} alt="codepen" />
           </SocialLink>
-          <SocialLink href="https://www.linkedin.com/in/michael-reilly-305075126/" target="_blank">
+          <SocialLink
+            href="https://www.linkedin.com/in/michael-reilly-305075126/"
+            target="_blank"
+          >
             <img height="30" width="23" src={linkedin} alt="linkedin" />
           </SocialLink>
         </SocialSection>

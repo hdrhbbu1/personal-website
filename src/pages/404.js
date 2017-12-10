@@ -5,7 +5,7 @@ import { colors } from '../theme';
 const Wrapper = styled.div`
   display: flex;
   height: 80vh;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
   align-items: center;
   color: ${colors.primary};
@@ -17,6 +17,7 @@ const GradientH1 = styled.h1`
   background-clip: text;
   color: transparent;
   font-size: 2.5rem;
+  text-align: center;
 `;
 
 const NotFoundPage = () => (

@@ -1,14 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Project from '../components/Project';
 import Header from '../components/Header';
 
-import { rhythm } from '../utils/typography';
 import { colors } from '../theme';
 
-export default ({ transition, data }) => (
-  <div style={transition && transition.style}>
+export default ({ data }) => (
+  <div>
     <Header>
       <h1>Portfolio</h1>
       <p>A list of projects I have worked on.</p>
@@ -23,17 +21,17 @@ export const query = graphql`
   query ProjectImageQuery {
     newsImage: imageSharp(id: {regex: "/news/"}) {
       sizes(maxWidth: 800) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_tracedSVG
       }
     }
     chagaImage: imageSharp(id: {regex: "/chaga/"}) {
       sizes(maxWidth: 800) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_tracedSVG
       }
     }
     hefImage: imageSharp(id: {regex: "/hef/"}) {
       sizes(maxWidth: 800) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_tracedSVG
       }
     }
   }

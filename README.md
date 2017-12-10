@@ -17,8 +17,8 @@ Future Features List:
 * Add a details view page for each project
 * Add styling to the blog post template
 * Style the Header component
-* Add custom prismjs styles to fit theme
-* Create a more flexible card component to remove duplication in about/blog pages
+* Edit prismjs styles to fit theme
+* Create a more flexible Card component to remove duplication in about/blog pages
 * Add svg icons to mobile navigation
 * ~~Create a simple logo~~
 * Make Animations better

@@ -5,7 +5,6 @@ import Particles from 'react-particles-js';
 import config from '../particlejs';
 import { colors, sizes } from '../theme';
 
-
 const Header = styled.div`
   position: relative;
   display: flex;
@@ -28,27 +27,56 @@ const CenterScreen = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background: white;
 `;
 
 const Svg = styled.svg`
-  width: 100vmin;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
+  width: 100vmin;
 `;
 
 const Circle = styled.circle`
   fill: none;
   stroke-width: 2px;
+  stroke-dasharray: 227;
+  stroke-dashoffset: 227;
+  animation: 1.3s rotate 0.3s forwards cubic-bezier(0,.26,.46,.99);
+  z-index: 1;
+  @keyframes rotate {
+    from {
+      stroke-dashoffset: -227;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 `;
 
-export default ({ transition, data }) => (
-  <div style={transition && transition.style}>
+const Text = styled.text`
+  opacity: 0;
+  animation: 0.5s fade 1.4s forwards;
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
+export default ({ data }) => (
+  <div>
     <Particles
       params={config}
       style={{
-        position: 'absolute', top: 0, left: 0, background: 'transparent', zIndex: 1,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        background: 'transparent',
+        zIndex: 1,
       }}
     />
     <CenterScreen>
@@ -61,7 +89,17 @@ export default ({ transition, data }) => (
         </defs>
         <g>
           <Circle cx="50" cy="50" r="25" stroke="url(#gradient)" />
-          <text x="49.5" y="55" fontSize="16px" fontWeight="400" fontFamily="Helvetica Neue" textAnchor="middle" fill="url(#gradient)">MTR</text>
+          <Text
+            x="49.5"
+            y="55"
+            fontSize="15px"
+            fontWeight="400"
+            fontFamily="Helvetica Neue"
+            textAnchor="middle"
+            fill="url(#gradient)"
+          >
+            MTR
+          </Text>
         </g>
       </Svg>
     </CenterScreen>

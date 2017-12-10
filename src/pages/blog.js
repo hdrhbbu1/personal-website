@@ -3,9 +3,8 @@ import BlogPostPreview from '../components/BlogPostPreview';
 
 import Container from '../components/Container';
 import Header from '../components/Header';
-import { colors } from '../theme';
 
-export default ({ data, transition }) => (
+export default ({ data }) => (
   <div style={transition && transition.style}>
     <Header>
       <h1>Blog</h1>

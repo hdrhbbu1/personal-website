@@ -9,8 +9,8 @@ const EmailLink = styled.a`
   }
 `;
 
-export default ({ transition }) => (
-  <div style={transition && transition.style}>
+export default () => (
+  <div>
     <Header>
       <h1>Contact</h1>
       <p>

@@ -14,7 +14,7 @@ const Wrapper = styled.section`
 `;
 
 export default ({ transition }) => (
-  <div style={transition && transition.style}>
+  <div>
     <Header>
       <h1>About</h1>
       <p>A brief list of my skills and education.</p>
