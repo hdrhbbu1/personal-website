@@ -5,7 +5,7 @@ import Container from '../components/Container';
 import Header from '../components/Header';
 
 export default ({ data }) => (
-  <div style={transition && transition.style}>
+  <div>
     <Header>
       <h1>Blog</h1>
       <p>{data.allMarkdownRemark.totalCount} Posts</p>
